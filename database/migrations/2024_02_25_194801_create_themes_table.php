@@ -14,15 +14,15 @@ return new class extends Migration
         Schema::create('themes', function (Blueprint $table) {
             $table->id();
 
-            // $table->string('font_en')->default('Lato');
-            // $table->string('image');
-            // $table->boolean('is_free')->default(true);
+            $table->string('font_en')->default('Lato');
+            $table->string('image');
+            $table->boolean('is_free')->default(true);
 
-            // $table->unsignedBigInteger('category_id');
-            // $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
 
-            // $table->unsignedBigInteger('created_by')->nullable();
-            // $table->foreign('created_by')->references('id')->on('users')->cascadeOnDelete();
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->foreign('created_by')->references('id')->on('users')->cascadeOnDelete();
 
             $table->timestamps();
         });
