@@ -3,6 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
+
+use function Laravel\Prompts\password;
 
 return new class extends Migration
 {
@@ -27,6 +30,8 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        User::create(['user_name' => 'admin' , 'email' => 'admin@gmail.com', 'type' => 'admin' , 'gender' => 'male', 'password' => 'admin']);
     }
 
     /**
