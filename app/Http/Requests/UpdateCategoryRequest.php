@@ -26,7 +26,7 @@ class UpdateCategoryRequest extends FormRequest
             'logo' =>'sometimes|string' ,
             'is_free' => 'sometimes|boolean' ,
             'type' => ['sometimes', Rule::in(['Quote','Theme'])],
-            'created_by' =>  'sometimes|numeric|exists:users,id',
+
         ];
     }
 }

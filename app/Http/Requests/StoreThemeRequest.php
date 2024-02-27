@@ -27,7 +27,6 @@ class StoreThemeRequest extends FormRequest
             'image'=>  'required|string' ,
             'is_free'=>  'required|boolean' ,
             'category_id'=>  'required|numeric|exists:categories,id',
-            'created_by'=>  'required|numeric|exists:users,id',
         ];
     }
 }

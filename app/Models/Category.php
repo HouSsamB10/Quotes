@@ -15,17 +15,16 @@ class Category extends Model
         'logo',
         'is_free',
         'type',
-        'created_by',
 
-        'categorible_id',
-        'categorible_type',
      ];
 
 
-     public function categorible()
-     {
-         return $this->morphTo();
-     }
+     public function themes(){
+        return $this->hasMany(Theme::class);
+    }
 
+    public function quotes(){
+        return $this->hasMany(Quote::class);
+    }
 
 }

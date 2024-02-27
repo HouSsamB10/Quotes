@@ -27,7 +27,6 @@ class UpdateThemeRequest extends FormRequest
             'image'=>  'sometimes|string' ,
             'is_free'=>  'sometimes|boolean' ,
             'category_id'=>  'sometimes|numeric|exists:categories,id',
-            'created_by'=>  'sometimes|numeric|exists:users,id',
         ];
     }
 }

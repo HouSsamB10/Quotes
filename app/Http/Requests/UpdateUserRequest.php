@@ -29,6 +29,8 @@ class UpdateUserRequest extends FormRequest
             'user_name'=>  'sometimes|string' ,
             'gender'  => ['sometimes', Rule::in(['male','female'])],
             'type' => ['sometimes', Rule::in(['admin','client'])],
+            'category_id'=>  'sometimes|numeric|exists:categories,id',
+            'theme_id'=>  'sometimes|numeric|exists:themes,id',
         ];
     }
 }

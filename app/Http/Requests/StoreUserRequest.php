@@ -22,9 +22,12 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_name'=>  'sometimes|string' ,
-            'gender'  => ['sometimes', Rule::in(['male','female'])],
-            'type' => ['sometimes', Rule::in(['client'])],
+            'user_name'=>  'required|string' ,
+            'gender'  => ['required', Rule::in(['male','female'])],
+            'type' => ['required', Rule::in(['client'])],
+            'category_id'=>  'required|numeric|exists:categories,id',
+            'theme_id'=>  'required|numeric|exists:themes,id',
+
         ];
     }
 }

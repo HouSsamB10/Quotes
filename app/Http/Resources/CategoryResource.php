@@ -20,7 +20,7 @@ class CategoryResource extends JsonResource
             'logo' => $this->logo,
             'is_free' => $this->is_free,
             'type' => $this->type,
-            'created_by' => $this->created_by,
+            'quotes' =>   $this->whenLoaded('quotes'),
 
         ];
     }

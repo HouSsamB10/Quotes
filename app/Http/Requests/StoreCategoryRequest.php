@@ -26,7 +26,6 @@ class StoreCategoryRequest extends FormRequest
             'logo' =>'required|string' ,
             'is_free' => 'required|boolean' ,
             'type' => ['required', Rule::in(['Quote','Theme'])],
-            'created_by' =>  'sometimes|numeric|exists:users,id',
 
         ];
     }

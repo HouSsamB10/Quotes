@@ -19,10 +19,11 @@ class UserController extends Controller
 
     public function store(StoreUserRequest $request)
     {
+
             DB::beginTransaction();
             $User = User::create($request->validated());
-            DB::commit();
-            return 'User are created';
+            return new UserResource($User);
+
     }
 
     public function show($id)

@@ -18,11 +18,6 @@ return new class extends Migration
             $table->boolean('is_free')->nullable();
             $table->string('type');
 
-            $table->morphs('categorible');
-
-            $table->unsignedBigInteger('created_by')->nullable();
-            $table->foreign('created_by')->references('id')->on('users')->cascadeOnDelete();
-
             $table->timestamps();
         });
     }
