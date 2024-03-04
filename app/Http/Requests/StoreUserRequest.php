@@ -25,8 +25,8 @@ class StoreUserRequest extends FormRequest
             'user_name'=>  'required|string' ,
             'gender'  => ['required', Rule::in(['male','female'])],
             'type' => ['required', Rule::in(['client'])],
-            'category_id'=>  'required|numeric|exists:categories,id',
-            'theme_id'=>  'required|numeric|exists:themes,id',
+            'category_id'=>  'required|exists:categories,id',
+            'theme_id'=>  'required|exists:themes,id',
 
         ];
     }

@@ -20,8 +20,8 @@ class QuoteResource extends JsonResource
             'desc_en' => $this->desc_en,
             'source_ar' => $this->source_ar,
             'source_en' => $this->source_en,
-            'category_id' => $this->category_id,
-            'created_by' => $this->created_by,
+            'category_id' => (int) $this->category_id,
+            // 'created_by' => $this->created_by,
 
 
         ];

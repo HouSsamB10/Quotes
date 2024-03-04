@@ -14,7 +14,7 @@ class QuoteController extends Controller
 
     public function index()
     {
-        return QuoteResource::collection(Quote::paginate(10));
+        return QuoteResource::collection(Quote::all());
     }
 
     public function store(StoreQuoteRequest $request)
@@ -22,7 +22,7 @@ class QuoteController extends Controller
             DB::beginTransaction();
             $Quote = Quote::create($request->validated());
             DB::commit();
-            return 'Quote are created';
+            return new QuoteResource($Quote);
     }
 
     public function show($id)
