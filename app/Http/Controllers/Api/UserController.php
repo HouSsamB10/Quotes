@@ -21,9 +21,10 @@ class UserController extends Controller
     {
 
             DB::beginTransaction();
-            $User = User::create($request->validated());
 
-            return new UserResource($User);
+            $user1 = User::create($request->validated());
+            DB::commit();
+            return new UserResource($user1);
 
     }
 
